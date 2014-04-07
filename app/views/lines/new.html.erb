@@ -1,0 +1,23 @@
+<h1>Add a line to the magical world of the Disney bus system!!!</h1>
+
+<br />
+<br />
+
+<div class="well">
+
+<%= form_for(@line) do |f| %>
+<div class="form-group">
+<%= f.label :color %>
+<%= f.text_field :color %>
+</div>
+
+
+  <br />
+  <br />
+<%= f.submit(:class => "btn btn-primary") %>
+<% end %>
+
+</form>
+  </div>
+
+

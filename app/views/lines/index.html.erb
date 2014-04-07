@@ -1,0 +1,12 @@
+<h2> Disney Bus System </h2>
+
+<ul>
+  <% @lines.each do |line| %>
+
+<li>
+    <%= link_to line.color, line_path(line), :class => "btn btn-default" %>
+</li>
+  <% end %>
+</ul>
+
+<a href="lines/new"><button btn btn-primary>Add a new
