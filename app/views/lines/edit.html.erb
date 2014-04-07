@@ -5,8 +5,14 @@
 <div class="form-group">
 <%= f.label :color %>
 <%= f.text_field :color %>
-</div>
+<br />
+<%= hidden_field_tag "line[station_ids][]", nil %>
+<% Station.all.each do |station| %>
+  <%= check_box_tag "line[station_ids][]", station.id, @line.station_ids.include?(station.id), id:   dom_id(station) %>
+  <%= label_tag dom_id(station), station.name %><br>
+<% end %>
 
+</div>
 
   <br />
   <br />

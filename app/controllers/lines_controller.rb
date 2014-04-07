@@ -2,6 +2,7 @@ class LinesController < ApplicationController
 
    def index
     @lines = Line.all
+    @stations = Station.all
     # render('lines/index.html.erb')
   end
 
@@ -35,7 +36,7 @@ class LinesController < ApplicationController
 
   def update
     @line = Line.find(params[:id])
-      if @line.update(line_params)
+      if @line.update_attributes(line_params)
         flash[:notice] =  "Line Updated."
         redirect_to line_path(@line)
       else
@@ -46,7 +47,7 @@ class LinesController < ApplicationController
 
 private
   def line_params
-    params.require(:line).permit(:color)
+    params.require(:line).permit(:color, :station_ids => [])
   end
 
 end

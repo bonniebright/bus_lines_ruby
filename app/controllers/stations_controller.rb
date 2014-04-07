@@ -1,29 +1,50 @@
-# class StationsController < ApplicationController
-#    def index
-#     @stations = Station.all
-#   end
+class StationsController < ApplicationController
+   def index
+    @stations = Station.all
+  end
 
-#   def new
-#     @station = Station.new
-#   end
+  def new
+    @station = Station.new
 
-#   def create
-#     @station = Station.new(params[:station])
-#     if @station.save
-#       flash[:notice] = "Station created."
-#       redirect_to('/stations')
-#     else
-#       render 'new'
-#     end
-#   end
+  end
 
-#   def update
-#     @station = Station.find(params[:id])
-#       if @station.update(params[:station])
-#         flash[:notice] =  "Station Updated."
-#         redirect_to station_path(@station)
-#       else
-#         render 'edit'
-#       end
-#     end
-# end
+  def show
+    @station = Station.find(params[:id])
+  end
+
+  def create
+    @station = Station.new(station_params)
+    if @station.save
+      flash[:notice] = "Station created."
+      redirect_to('/lines')
+    else
+      render 'new'
+    end
+  end
+
+  def edit
+    @station = Station.find(params[:id])
+  end
+
+  def update
+    @station = Station.find(params[:id])
+      if @station.update(station_params)
+        flash[:notice] =  "Station Updated."
+        redirect_to station_path(@station)
+      else
+        render 'edit'
+      end
+    end
+
+    def destroy
+      @station = Station.find(params[:id])
+      @station.destroy
+      redirect_to ('/lines')
+    end
+
+ private
+
+  def station_params
+    params.require(:station).permit(:name)
+  end
+end

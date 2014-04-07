@@ -4,9 +4,17 @@
   <% @lines.each do |line| %>
 
 <li>
-    <%= link_to line.color, line_path(line), :class => "btn btn-default" %>
+    <%= link_to line.color, line_path(line), :class => "big" %>
 </li>
   <% end %>
 </ul>
 
-<a href="lines/new"><button btn btn-primary>Add a new
+<h2> Disney Bus Stations: </h2>
+<ul>
+  <% @stations.each do |station| %>
+  <li> <%= link_to station.name, station_path(station), :class => "big" %>
+  </li>
+    <% end %>
+</ul>
+
+
