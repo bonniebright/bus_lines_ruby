@@ -1,4 +1,12 @@
 <h2> The <%= @line.color %> Disney Bus Line </h2>
+<br>
+<h4> Stops: </h4>
+<ul>
+  <% @line.stations.each do |station| %>
+  <li><%= station.name %></li>
+  <% end %>
+</ul>
+
 <div class="container-fluid">
 <p><%= link_to "Edit", edit_line_path(@line), :class => "btn btn-default" %></p>
 <p><%= link_to "Delete", line_path(@line),

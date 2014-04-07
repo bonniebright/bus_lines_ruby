@@ -1,6 +1,12 @@
 <h1><%= @station.name %></h1>
 <br />
 <br />
+<h4> Buses that stop here: </h4>
+<ul>
+  <% @station.lines.each do |line| %>
+   <li> <%= line.color %> </li>
+    <% end %>
+</ul>
 
 
 

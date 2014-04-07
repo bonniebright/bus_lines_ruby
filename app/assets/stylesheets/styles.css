@@ -1,4 +1,28 @@
 a.big {
   font-size: 210%;
+
 }
 
+body {background-image:url(http://static.squarespace.com/static/51e53cbfe4b0a8622b76d419/t/51e58d27e4b05a1c36b8389d/1373998384237/A%20Colorful%20Spaceship%20Earth.jpg?format=1500w);
+
+  color: white;
+}
+
+.form-group {
+  color: black;
+}
+
+.lines {
+  float:left;
+}
+.stations {
+  float:right;
+}
+.well {
+   background-color: rgba(245, 245, 245, 0.4);
+}
+
+li.no_dot {
+ list-style-type: none;
+ margin: 5px;
+}
