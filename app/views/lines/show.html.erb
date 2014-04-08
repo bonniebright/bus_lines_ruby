@@ -1,18 +1,41 @@
 <h2> The <%= @line.color %> Disney Bus Line </h2>
+
 <br>
+<div class ="lines">
+<div class="well">
+<h4> Bus Numbers that run on the Blue Line: </h4>
+<ul>
+    <% @line.buses.each do |bus| %>
+    <li>  <%= bus.id %> </li>
+    <% end %>
+</ul>
+</div>
+</div>
+<div class ="stations">
+<div class="well">
 <h4> Stops: </h4>
 <ul>
   <% @line.stations.each do |station| %>
   <li><%= station.name %></li>
   <% end %>
 </ul>
-
-<div class="container-fluid">
-<p><%= link_to "Edit", edit_line_path(@line), :class => "btn btn-default" %></p>
-<p><%= link_to "Delete", line_path(@line),
+</div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="lines">
+<p><%= link_to "Edit this line", edit_line_path(@line), :class => "btn btn-default" %></p>
+<p><%= link_to "Delete this line", line_path(@line),
                          :confirm => "You sure?",
                          :method => "delete",
                          :class => "btn btn-danger" %></p>
 
 </div>
+
 

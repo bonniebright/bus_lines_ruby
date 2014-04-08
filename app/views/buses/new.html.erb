@@ -1,0 +1,13 @@
+<h1>Add a bus</h1>
+<br />
+<div class="well">
+<%= form_for(@bus) do |f| %>
+<div class="form-group">
+ <%= f.label :line_id %>
+ <%= f.collection_select(:line_id, @lines, :id, :color) %>
+</div>
+<%= f.submit(:class => "btn btn-primary") %>
+<% end %>
+</form>
+</div>
+
